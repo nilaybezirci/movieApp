@@ -1,0 +1,29 @@
+button {
+  background-color: #242a32;
+  color: white;
+  font-size: 50px;
+  flex: content;
+  margin-top: -25px;
+  margin-right: auto;
+}
+button:hover {
+  background-color: #242a32;
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  color: white;
+}
+
+.search-text {
+  color: #faf8f1;
+  font-size: 19px;
+}
+
+h5 {
+  color: aliceblue;
+} /*# sourceMappingURL=search.component.css.map */

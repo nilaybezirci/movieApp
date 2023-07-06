@@ -1,0 +1,47 @@
+$input-width: 700px;
+$tab-color: #f9f5f6;
+.container {
+  display: flex;
+  justify-content: center;
+  .search-text {
+    color: $tab-color;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: $input-width;
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+button {
+  font-size: 14px;
+}
+.nav-tabs {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: $tab-color;
+  font-size: 25px;
+}
+
+.nav-link.active {
+  background-color: transparent;
+  border: none;
+  color: $tab-color;
+}

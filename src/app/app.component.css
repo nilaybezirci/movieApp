@@ -1,0 +1,17 @@
+.navbar {
+  background-color: #2c3333;
+  justify-content: center;
+}
+.navbar .navbar-brand {
+  color: #e50914;
+  font-weight: bold;
+}
+.navbar .navbar-nav .nav-item {
+  align-items: center;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #e50914;
+  display: flex;
+  font-size: 24px;
+  margin-left: 290px;
+}/*# sourceMappingURL=app.component.css.map */

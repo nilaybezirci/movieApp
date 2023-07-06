@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .search-text {
+  color: #f9f5f6;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 700px;
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+button {
+  font-size: 14px;
+}
+
+.nav-tabs {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #f9f5f6;
+  font-size: 25px;
+}
+
+.nav-link.active {
+  background-color: transparent;
+  border: none;
+  color: #f9f5f6;
+}/*# sourceMappingURL=home.component.css.map */

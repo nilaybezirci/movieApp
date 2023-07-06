@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+$font-family: "Ubuntu", sans-serif;
+$background-color: #242a32;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  overflow-x: hidden;
+}

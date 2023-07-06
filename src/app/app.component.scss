@@ -1,0 +1,23 @@
+$primary-color: #e50914;
+$secondary-color: #2c3333;
+.navbar {
+  background-color: $secondary-color;
+  justify-content: center;
+  .navbar-brand {
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      align-items: center;
+      .nav-link {
+        color: $primary-color;
+        display: flex;
+
+        font-size: 24px;
+        margin-left: 290px;
+      }
+    }
+  }
+}
