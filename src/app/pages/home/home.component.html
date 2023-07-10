@@ -1,32 +1,136 @@
 <!--search start -->
-<div class="container mt-5 p5">
-  <p class="search-text mt-3"><i>What Do You Want to watch?</i></p>
-</div>
-<form class="d-flex" role="search">
-  <input
-    class="form-control me-2"
-    type="search"
-    placeholder="Search..."
-    aria-label="Search"
-  />
-  <button type="button" class="btn btn-outline-danger">Search</button>
-</form>
-
+<app-search></app-search>
 <!--search end-->
 
+<!--top movie sliders start -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div
+      class="swiper-slide"
+      *ngFor="let b of bannerResult; let i = index"
+      [ngClass]="{ active: i === 1 }"
+    >
+      <img
+        src="https://image.tmdb.org/t/p/original/{{ b.poster_path }}"
+        class="d-block w-100"
+        alt="..."
+        [routerLink]="['/movie', b.id]"
+      />
+      <div class="slide-number">{{ i + 1 }}</div>
+      <!-- Numara basma -->
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!--top movie sliders end-->
+
 <!--tabs start -->
-<ul class="nav nav-tabs mt-5">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Now playing</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Upcoming</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Top rated</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="popular">Popular</a>
-  </li>
-</ul>
+<div class="tab-container">
+  <ul class="nav nav-underline mt-5">
+    <li class="nav-item" (click)="onClickNowPlaying()">
+      <a class="nav-link" aria-current="page">Now playing</a>
+    </li>
+    <li class="nav-item" (click)="onClickUpcoming()">
+      <a class="nav-link">Upcoming</a>
+    </li>
+    <li class="nav-item" (click)="onClicktopRated()">
+      <a class="nav-link">Top rated</a>
+    </li>
+    <li class="nav-item" (click)="onClickPopular()">
+      <a class="nav-link">Popular</a>
+    </li>
+  </ul>
+</div>
 <!--tabs end -->
+<!--Now playing start -->
+<div class="row mt-5" *ngIf="showNowPlaying">
+  <ng-container *ngFor="let g of getNowPlayingResult; let i = index">
+    <div class="col-lg-3" *ngIf="g.poster_path">
+      <div class="row">
+        <div class="col-lg-12 mt-4 mb-4">
+          <img
+            src="https://image.tmdb.org/t/p/original/{{ g.poster_path }}"
+            class="rowimg largeposter"
+            alt="..."
+            [routerLink]="['/movie', g.id]"
+          />
+        </div>
+        <div class="col-lg-12 mt-4 mb-4">
+          <h5>{{ g.original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Yeni bir satır başlat -->
+    <div class="w-100" *ngIf="(i + 1) % 4 === 0"></div>
+  </ng-container>
+</div>
+<!--up coming start-->
+
+<div class="row mt-5" *ngIf="showUpcoming">
+  <ng-container *ngFor="let u of upComingResult; let i = index">
+    <div class="col-lg-3" *ngIf="u.poster_path">
+      <div class="row">
+        <div class="col-lg-12 mt-4 mb-4">
+          <img
+            src="https://image.tmdb.org/t/p/original/{{ u.poster_path }}"
+            class="rowimg largeposter"
+            alt="..."
+            [routerLink]="['/movie', u.id]"
+          />
+        </div>
+        <div class="col-lg-12 mt-4 mb-4">
+          <h5>{{ u.original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Yeni bir satır başlat -->
+    <div class="w-100" *ngIf="(i + 1) % 4 === 0"></div>
+  </ng-container>
+</div>
+
+<!--Top rated Start-->
+<div class="row mt-5" *ngIf="showtopRated">
+  <ng-container *ngFor="let top of topRatedResult; let i = index">
+    <div class="col-lg-3" *ngIf="top.poster_path">
+      <div class="row">
+        <div class="col-lg-12 mt-4 mb-4">
+          <img
+            src="https://image.tmdb.org/t/p/original/{{ top.poster_path }}"
+            class="rowimg largeposter"
+            alt="..."
+            [routerLink]="['/movie', top.id]"
+          />
+        </div>
+        <div class="col-lg-12 mt-4 mb-4">
+          <h5>{{ top.original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Yeni bir satır başlat -->
+    <div class="w-100" *ngIf="(i + 1) % 4 === 0"></div>
+  </ng-container>
+</div>
+
+<!--Popular start-->
+<div class="row mt-5" *ngIf="showPopular">
+  <ng-container *ngFor="let p of popularResult; let i = index">
+    <div class="col-lg-3" *ngIf="p.poster_path">
+      <div class="row">
+        <div class="col-lg-12 mt-4 mb-4">
+          <img
+            src="https://image.tmdb.org/t/p/original/{{ p.poster_path }}"
+            class="rowimg largeposter"
+            alt="..."
+            [routerLink]="['/movie', p.id]"
+          />
+        </div>
+        <div class="col-lg-12 mt-4 mb-4">
+          <h5>{{ p.original_title }}</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Yeni bir satır başlat -->
+    <div class="w-100" *ngIf="(i + 1) % 4 === 0"></div>
+  </ng-container>
+</div>

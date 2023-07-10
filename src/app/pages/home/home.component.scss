@@ -1,5 +1,38 @@
 $input-width: 700px;
 $tab-color: #f9f5f6;
+
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #242a32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    img {
+      display: block;
+      width: 200px;
+      height: 400px;
+      object-fit: cover;
+    }
+    .slide-number {
+      position: absolute;
+      bottom: 10px; /* Alt kenardan mesafe ayarlayın */
+      left: 0; /* Sol kenardan mesafe ayarlayın */
+      color: linear-gradient(to right, #00bfff, #4169e1); // Geçişli mavi renk
+      font-size: 50px; /* Numara font boyutunu ayarlayın */
+      background-color: #f9f5f6; // Transparan mavi renk
+      padding: 4px 8px; /* Numara için iç içe boşluğu ayarlayın */
+      border-radius: 50%; /* Numara için kenar yuvarlatmasını ayarlayın */
+    }
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -23,25 +56,35 @@ input {
 button {
   font-size: 14px;
 }
-.nav-tabs {
-  list-style-type: none;
-  padding: 0;
+.tab-container {
   display: flex;
   justify-content: center;
-  border: none;
+  align-items: center;
+
+  .nav-item {
+    text-align: center;
+
+    .nav-link {
+      font-size: 30px;
+      color: black;
+    }
+  }
 }
 
-.nav-item {
-  margin-right: 10px;
+.row {
+  margin-bottom: 20px; // Her satırın altında 20px boşluk bırakma
 }
 
-.nav-link {
-  color: $tab-color;
-  font-size: 25px;
+.col-lg-3 {
+  margin-bottom: 20px; // Her sütunun altında 20px boşluk bırakma
 }
 
-.nav-link.active {
-  background-color: transparent;
-  border: none;
-  color: $tab-color;
+img {
+  width: 100%; // Resimlerin genişliğini %100 yaparak sütunun tamamını kaplamasını sağlar
+  max-width: 100%; // Resimlerin maksimum genişliğini %100 olarak sınırlar
+  height: auto;
+  border-radius: 15px;
+}
+h5 {
+  color: #f9f5f6;
 }

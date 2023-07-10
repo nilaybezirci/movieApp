@@ -1,0 +1,35 @@
+<div class="row mt-5">
+  <div class="col-lg-4" *ngFor="let movie of watchList">
+    <div class="row">
+      <div class="col-lg-3 mt-4 mb-4" *ngIf="movie.poster_path">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
+          [routerLink]="['/movie', movie.id]"
+        />
+      </div>
+      <div class="col-lg-9 mt-4 mb-4">
+        <h5>{{ movie.original_title }}</h5>
+
+        <div class="feature">
+          <p>
+            <i class="fa-regular fa-star" style="color: #eebe3a"></i>
+            {{ movie.vote_average }}
+          </p>
+
+          <p>
+            <i class="fa-solid fa-calendar-days" style="color: #e8e8e8"></i
+            >{{ movie.release_date }}
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-dark"
+          (click)="removeFromWatchList(movie)"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

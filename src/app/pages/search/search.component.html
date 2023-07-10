@@ -33,8 +33,29 @@
         </div>
         <div class="col-lg-9 mt-4 mb-4">
           <h5>{{ s.original_title }}</h5>
+          <div class="feature">
+            <p>
+              <i class="fa-regular fa-star" style="color: #eebe3a"></i>
+              {{ s.vote_average }}
+            </p>
+            <p>
+              <i class="fa-solid fa-calendar-days" style="color: #e8e8e8"></i>
+              {{ s.release_date }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div
+    class="text-center mt-5"
+    *ngIf="searchResult && searchResult.length === 0"
+  >
+    <img src="assets/search.png" style="width: 300px; height: 300px" alt="" />
+
+    <p style="font-size: 30px" class="not-found-message">
+      We Are Sorry, We Can Not Find The Movie :(
+    </p>
   </div>
 </div>
